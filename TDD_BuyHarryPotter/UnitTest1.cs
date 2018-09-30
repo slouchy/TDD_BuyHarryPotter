@@ -103,7 +103,7 @@ namespace TDD_BuyHarryPotter
         }
 
         [TestMethod]
-        public void BuyBook_ThreetypeFiveBook_ShouldBe570()
+        public void BuyBook_ThreetypeFiveBook_ShouldBe470()
         {
             var bookStroe = new BookStore();
             int exceptedPrice = 470;
