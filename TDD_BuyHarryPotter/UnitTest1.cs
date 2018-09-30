@@ -67,5 +67,24 @@ namespace TDD_BuyHarryPotter
 
             Assert.AreEqual(exceptedPrice, actuallPrice);
         }
+
+        [TestMethod]
+        public void BuyBook_SixtypeSixBook_ShouldBe450()
+        {
+            var bookStroe = new BookStore();
+            int exceptedPrice = 450;
+
+            int actuallPrice = bookStroe.BuyBook(new Dictionary<int, int>
+            {
+                [1] = 1,
+                [2] = 1,
+                [3] = 1,
+                [4] = 1,
+                [5] = 1,
+                [6] = 1
+            });
+
+            Assert.AreEqual(exceptedPrice, actuallPrice);
+        }
     }
 }
