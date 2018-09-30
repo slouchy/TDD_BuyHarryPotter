@@ -28,16 +28,16 @@ namespace TDD_BuyHarryPotter
             TotalPriceShouldBe(100, books);
         }
 
-        //[TestMethod]
-        //public void BuyHarryPotter_Buy1TypeBook2Book_ShouldBe200()
-        //{
-        //    Dictionary<int, int> books = new Dictionary<int, int>
-        //    {
-        //        [1] = 2
-        //    };
+        [TestMethod]
+        public void BuyHarryPotter_Buy1TypeBook2Book_ShouldBe200()
+        {
+            Dictionary<int, int> books = new Dictionary<int, int>
+            {
+                [1] = 2
+            };
 
-        //    TotalPriceShouldBe(200, books);
-        //}
+            TotalPriceShouldBe(200, books);
+        }
 
         [TestMethod]
         public void BuyHarryPotter_Buy2TypeBookEach1Book_ShouldBe195()
