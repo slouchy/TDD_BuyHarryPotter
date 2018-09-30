@@ -11,6 +11,7 @@ namespace TDD_BuyHarryPotter
         static void Main() { }
         internal int BuyBook(int v)
         {
+            return v * 100;
             throw new NotImplementedException();
         }
     }
