@@ -22,7 +22,13 @@ namespace TDD_BuyHarryPotter
         public int BuyBook(Dictionary<int, int> books)
         {
             var bookSum = books.Sum(r => r.Value);
-            var bookDiscount = _discountLookup[books.Count()];
+            var bookTypeCount = books.Count();
+            if (bookTypeCount > 5)
+            {
+                bookTypeCount = 5;
+            }
+
+            var bookDiscount = _discountLookup[bookTypeCount];
             return (int)(bookSum * _bookPrice * bookDiscount);
         }
     }
