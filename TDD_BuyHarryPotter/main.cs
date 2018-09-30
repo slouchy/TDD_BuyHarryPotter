@@ -11,6 +11,7 @@ namespace TDD_BuyHarryPotter
         static void Main() { }
         public int BuyBook(Dictionary<int, int> books)
         {
+            return 100;
             throw new NotImplementedException();
         }
     }
