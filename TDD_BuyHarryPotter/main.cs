@@ -21,12 +21,9 @@ namespace TDD_BuyHarryPotter
         static void Main() { }
         public int BuyBook(Dictionary<int, int> books)
         {
-            var discountPriceBooksTotal = books.Count();
             var bookTypeCount = books.Count();
-            var orignPriceBooksTotal = books.Sum(r =>
-            {
-                return r.Value > 1 ? r.Value - 1 : 0;
-            });
+            var sumDiscountBooks = bookTypeCount;
+            var sumOriginBooks = books.Sum(r => { return r.Value > 1 ? r.Value - 1 : 0; });
 
             if (bookTypeCount > 5)
             {
@@ -34,7 +31,7 @@ namespace TDD_BuyHarryPotter
             }
 
             var bookDiscount = _discountLookup[bookTypeCount];
-            return (int)(discountPriceBooksTotal * _bookPrice * bookDiscount + orignPriceBooksTotal * _bookPrice);
+            return (int)((sumDiscountBooks * bookDiscount + sumOriginBooks) * _bookPrice);
         }
     }
 }
