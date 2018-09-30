@@ -12,14 +12,14 @@ namespace TDD_BuyHarryPotter
 
         private int _bookPrice = 100;
 
-        internal int BuyBook(int bookCount)
+        internal int BuyBook(Dictionary<int, int> books)
         {
-            if (bookCount == 2)
+            if (books.Count() == 2)
             {
                 return (int)(1 * _bookPrice + 1 * _bookPrice * 0.95);
             }
 
-            return bookCount * _bookPrice;
+            return books[1] * _bookPrice;
         }
     }
 }
