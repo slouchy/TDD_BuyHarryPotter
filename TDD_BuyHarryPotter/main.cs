@@ -9,7 +9,7 @@ namespace TDD_BuyHarryPotter
     public class BookStore
     {
         static void Main() { }
-        internal int BuyBook(int v)
+        public int BuyBook(Dictionary<int, int> books)
         {
             throw new NotImplementedException();
         }
