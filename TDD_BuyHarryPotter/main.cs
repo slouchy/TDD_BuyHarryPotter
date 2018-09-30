@@ -14,6 +14,12 @@ namespace TDD_BuyHarryPotter
         static void Main() { }
         public int BuyBook(Dictionary<int, int> books)
         {
+            if (books.Count() == 3)
+            {
+                var bookSum = books.Sum(r => r.Value);
+                return (int)(bookSum * _bookPrice * 0.9);
+            }
+
             if (books.Count() == 2)
             {
                 var bookSum = books.Sum(r => r.Value);
