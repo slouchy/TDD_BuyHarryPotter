@@ -11,19 +11,24 @@ namespace TDD_BuyHarryPotter
         static void Main() { }
 
         private int _bookPrice = 100;
+        private Dictionary<int, double> _discountLookup = new Dictionary<int, double>
+        {
+            [1] = 1,
+            [2] = 0.95,
+            [3] = 0.9,
+            [4] = 0.8,
+            [5] = 0.75
+        };
 
         internal int BuyBook(Dictionary<int, int> books)
         {
-            if (books.Count() == 2)
+            double bookDiscount = 0.75;
+            if (books.Count() < 6)
             {
-                return (int)(1 * _bookPrice + 1 * _bookPrice * 0.95);
-            }
-            else if (books.Count() == 3)
-            {
-                return (int)(3 * _bookPrice * 0.9);
+                bookDiscount = _discountLookup[books.Count()];
             }
 
-            return books[1] * _bookPrice;
+            return (int)(books.Count() * _bookPrice * bookDiscount);
         }
     }
 }
