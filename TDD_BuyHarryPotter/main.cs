@@ -14,6 +14,11 @@ namespace TDD_BuyHarryPotter
 
         internal int BuyBook(int bookCount)
         {
+            if (bookCount == 2)
+            {
+                return (int)(1 * _bookPrice + 1 * _bookPrice * 0.95);
+            }
+
             return bookCount * _bookPrice;
         }
     }
