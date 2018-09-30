@@ -51,6 +51,20 @@ namespace TDD_BuyHarryPotter
             TotalPriceShouldBe(195, books);
         }
 
+
+        [TestMethod]
+        public void BuyHarryPotter_Buy3TypeBookEach1Book_ShouldBe270()
+        {
+            Dictionary<int, int> books = new Dictionary<int, int>
+            {
+                [1] = 1,
+                [2] = 1,
+                [3] = 1,
+            };
+
+            TotalPriceShouldBe(270, books);
+        }
+
         private void InitBookStore()
         {
             _bookStore = new BookStore();
