@@ -9,24 +9,21 @@ namespace TDD_BuyHarryPotter
     public class BookStore
     {
         private const int _bookPrice = 100;
-        private double _discount = 0.95;
+        private Dictionary<int, double> _discountLookup = new Dictionary<int, double>
+        {
+            [1] = 1,
+            [2] = 0.95,
+            [3] = 0.9,
+            [4] = 0.8,
+            [5] = 0.75
+        };
 
         static void Main() { }
         public int BuyBook(Dictionary<int, int> books)
         {
-            if (books.Count() == 3)
-            {
-                var bookSum = books.Sum(r => r.Value);
-                return (int)(bookSum * _bookPrice * 0.9);
-            }
-
-            if (books.Count() == 2)
-            {
-                var bookSum = books.Sum(r => r.Value);
-                return (int)(bookSum * _bookPrice * _discount);
-            }
-
-            return books[1] * _bookPrice;
+            var bookSum = books.Sum(r => r.Value);
+            var bookDiscount = _discountLookup[books.Count()];
+            return (int)(bookSum * _bookPrice * bookDiscount);
         }
     }
 }
