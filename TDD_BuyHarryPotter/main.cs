@@ -9,10 +9,12 @@ namespace TDD_BuyHarryPotter
     public class BookStore
     {
         static void Main() { }
-        internal int BuyBook(int v)
+
+        private int _bookPrice = 100;
+
+        internal int BuyBook(int bookCount)
         {
-            return v * 100;
-            throw new NotImplementedException();
+            return bookCount * _bookPrice;
         }
     }
 }
